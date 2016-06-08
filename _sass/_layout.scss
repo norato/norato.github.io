@@ -41,6 +41,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  img {
+    margin-left: 5%;
+  }
 }
 
 .page-heading {
@@ -55,8 +58,14 @@
     margin-bottom: $spacing-unit;
     border: 1px solid #ccc;
     border-radius: 5px;
-    text-align: center;
     margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    a {
+      text-decoration: none;
+    }
   }
 }
 

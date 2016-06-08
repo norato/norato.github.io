@@ -3,9 +3,10 @@ layout: post
 title:  "Using Bower in Ruby on Rails"
 date:   2016-06-07 23:37:51 -0300
 categories: rails bower
+image: "/assets/rails-bower.png"
 ---
 
-![My helpful screenshot](/assets/rails-bower.png)
+![My helpful screenshot]( /assets/rails-bower.png)
 
 Era uma vez uma época distante onde os nossos heróis quando precisavam de mais poderes
 eles tinham que recorrer a arquivos mágicos que os davam certas habilidades. Porém

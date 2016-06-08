@@ -33,7 +33,7 @@
 /**
  * Page content
  */
-.page-content {
+ .page-content {
   padding: $spacing-unit 0;
   display: flex;
   width: 100%;
@@ -114,4 +114,46 @@
       font-size: 18px;
     }
   }
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: -250px;
+  width: 250px;
+  background-color: #333;
+  transition: all 0.5s ease-out;
+  ul {
+    margin-top: 20px;
+    padding: 10px;
+    list-style: none;
+    li {
+      border-bottom: 1px solid #555;
+      a {
+        display: block;
+        color: #FFF;
+        padding: 10px;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.menu-btn {
+  position: absolute;
+  color: #FFF;
+  background-color: #333;
+  padding: 10px;
+  top: 12px;
+  left: 7px;
+}
+#menu-toggle {
+  display: none;
+  &:checked {
+    & + .menu{
+      left: 0;
+    }
+  }
+
 }

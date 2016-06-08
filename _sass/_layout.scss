@@ -8,6 +8,8 @@
   background: $grey-color-dark;
   display: flex;
   align-items: center;
+  justify-content: center;
+
 }
 
 .site-title {
@@ -17,7 +19,6 @@
   letter-spacing: -1px;
   margin-bottom: 0;
   float: left;
-  margin-left: 15%;
 
   &,
   &:visited {
@@ -122,10 +123,10 @@
   bottom: 0;
   left: -250px;
   width: 250px;
-  background-color: #333;
+  background-color: rgba(0,0,0,0.7);
   transition: all 0.5s ease-out;
   ul {
-    margin-top: 20px;
+    margin-top: 66px;
     padding: 10px;
     list-style: none;
     li {

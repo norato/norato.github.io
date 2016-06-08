@@ -157,7 +157,10 @@ pre {
  */
 
 .wrapper {
-  width: 60%;
+  width: 90%;
+  @media screen and (min-width: 1024px){
+    width: 60%;
+  }
 }
 
 

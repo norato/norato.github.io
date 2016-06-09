@@ -4,6 +4,7 @@ title:  "Using Bower in Ruby on Rails"
 date:   2016-06-07 23:37:51 -0300
 categories: rails bower
 image: "/assets/rails-bower.png"
+permalink: /blog/:title
 ---
 
 ![My helpful screenshot]( /assets/rails-bower.png)

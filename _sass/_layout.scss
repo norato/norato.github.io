@@ -196,18 +196,29 @@ $xFinal: 20;
   @for $i from 0 through $percentIncrement {
     $percent: 0% + $i * $step;
     $deg: 0deg + $i * $degIncrement;
-    
-    $xFirstQuarter: $xInitial + $i * $xIncrement; 
-    @if $xFirstQuarter <= $xFinal and 
-        $xFirstQuarter >= $xInitial {
+
+    $xFirstQuarter: 25%;
+    $xSecondQuarter: 50%;
+    $xThirdQuarter: 75%;
+    $xFourthQuarter: 100%;
+
+    @if $xFirstQuarter >= $percent {
       $x: $xInitial + $i * $xIncrement;
       #{$percent} { top: $x; transform: rotate($deg) }
     }
-    
-    $xSecondQuarter: $xInitial + $i * $xIncrement;
-    @if $xSecondQuarter > $xFinal and 
-        $xSecondQuarter < $xFinal {
+    @if $xFirstQuarter < $percent and
+        $xSecondQuarter >= $percent {
       $x: $xFinal - $xIncrement * ($i - 5);
+      #{$percent} { top: $x; transform: rotate($deg) }
+    }
+    @if $xSecondQuarter < $percent and
+        $xThirdQuarter >= $percent {
+      $x: $xInitial - ($i - 10) * $xIncrement;
+      #{$percent} { top: $x; transform: rotate($deg) }
+    }
+    @if $xThirdQuarter < $percent and
+        $xFourthQuarter >= $percent {
+      $x: - ($xFinal - ($i - 15) * $xIncrement);
       #{$percent} { top: $x; transform: rotate($deg) }
     }
   }

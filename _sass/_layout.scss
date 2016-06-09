@@ -166,5 +166,49 @@
       left: 0;
     }
   }
+}
 
+
+/**
+ * Functions
+ */
+.foo {
+  width: 20px;
+  height: 5px;
+  background-color: red;
+  position: relative;
+  -webkit-animation-name: example; /* Chrome, Safari, Opera */
+  -webkit-animation-duration: 4s; /* Chrome, Safari, Opera */
+  -webkit-animation-delay: 2s; /* Chrome, Safari, Opera */
+  animation-name: example;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  animation-iteration-count: infinite;
+}
+
+$step: 5;
+$xInitial: 0;
+$xFinal: 20;
+@keyframes example {
+  $percentIncrement: 100/$step;
+  $degIncrement: 360/$percentIncrement;
+  $xIncrement: 20/($percentIncrement/4);
+  @for $i from 0 through $percentIncrement {
+    $percent: 0% + $i * $step;
+    $deg: 0deg + $i * $degIncrement;
+    
+    $xFirstQuarter: $xInitial + $i * $xIncrement; 
+    @if $xFirstQuarter <= $xFinal and 
+        $xFirstQuarter >= $xInitial {
+      $x: $xInitial + $i * $xIncrement;
+      #{$percent} { top: $x; transform: rotate($deg) }
+    }
+    
+    $xSecondQuarter: $xInitial + $i * $xIncrement;
+    @if $xSecondQuarter > $xFinal and 
+        $xSecondQuarter < $xFinal {
+      $x: $xFinal - $xIncrement * ($i - 5);
+      #{$percent} { top: $x; transform: rotate($deg) }
+    }
+  }
 }
